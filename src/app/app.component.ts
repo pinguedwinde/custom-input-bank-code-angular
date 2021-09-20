@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Form, FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'custom-input-bank-code';
+  title = 'My Bank S';
+
+  public form: FormGroup;
+
+  constructor(private fb: FormBuilder){
+    this.form = this.fb.group({
+      name: [''],
+      code: ['']
+    })
+  }
 }
